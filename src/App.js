@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, withRouter } from "react-router-dom";
+import MainAsterodsContainer from "./components/MainAsteroids/MainAsteroidsContainer";
+import DestructionAsteroidsContainer from "./components/DestructionAsterods/DestructionAsteroidsContainer";
+import AboutAsteroidContainer from "./components/AboutAsteroid/AboutAsteroidContainer";
+import { compose } from "redux";
+import { connect } from "react-redux";
+import { getInitial } from "./redux/selectors/asteroids-selectors";
+import { getFirstAsteroids } from "./redux/reducers/asteroids-reducer";
+import Loader from "./components/common/Loader";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+  if (props.initial === false) {
+    console.log("loader")
+    props.getFirstAsteroids();
+    return <Loader />;
+  } 
+    return (
+      <div>
+        <Route 
+          path='/' 
+          render={() => <MainAsterodsContainer />} />
+        <Route
+          path='/destructions'
+          render={() => <DestructionAsteroidsContainer />}
+        />
+        <Route
+          path='/about/:asterodId?'
+          render={() => <AboutAsteroidContainer />}
+        />
+      </div>
+    );
+  
 }
 
-export default App;
+let mapStateToProps = (state) => ({
+  initial: getInitial(state),
+});
+
+export default compose(
+  connect(mapStateToProps, { getFirstAsteroids }),
+  withRouter
+)(App);
