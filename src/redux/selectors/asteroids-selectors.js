@@ -9,3 +9,7 @@ export const getIsLoading = (state) => {
 export const getInitial = (state) => {
     return state.asteroidsData.initial
 }
+
+export const getDistanceToTheMoon = (state) => {
+    return state.asteroidsData.distanceToTheMoon
+}

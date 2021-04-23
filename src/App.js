@@ -8,18 +8,20 @@ import { connect } from "react-redux";
 import { getInitial } from "./redux/selectors/asteroids-selectors";
 import { getFirstAsteroids } from "./redux/reducers/asteroids-reducer";
 import Loader from "./components/common/Loader";
+import Header from "./components/Header/Header";
 
 function App(props) {
   if (props.initial === false) {
-    console.log("loader")
     props.getFirstAsteroids();
     return <Loader />;
-  } 
-    return (
+  }
+  return (
+    <div>
+      <header>
+        <Header/>
+      </header>
       <div>
-        <Route 
-          path='/' 
-          render={() => <MainAsterodsContainer />} />
+        <Route path='/' render={() => <MainAsterodsContainer />} />
         <Route
           path='/destructions'
           render={() => <DestructionAsteroidsContainer />}
@@ -29,8 +31,9 @@ function App(props) {
           render={() => <AboutAsteroidContainer />}
         />
       </div>
-    );
-  
+      <footer>2021 © Все права и планета защищены.</footer>
+    </div>
+  );
 }
 
 let mapStateToProps = (state) => ({
