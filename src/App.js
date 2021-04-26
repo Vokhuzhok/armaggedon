@@ -9,6 +9,7 @@ import { getInitial } from "./redux/selectors/asteroids-selectors";
 import { getFirstAsteroids } from "./redux/reducers/asteroids-reducer";
 import Loader from "./components/common/Loader";
 import Header from "./components/Header/Header";
+import style from "./components/Header/Header.module.css";
 
 function App(props) {
   if (props.initial === false) {
@@ -18,20 +19,20 @@ function App(props) {
   return (
     <div>
       <header>
-        <Header/>
+        <Header />
       </header>
       <div>
-        <Route path='/' render={() => <MainAsterodsContainer />} />
+        <Route exact path='/' render={() => <MainAsterodsContainer />} />
         <Route
           path='/destructions'
           render={() => <DestructionAsteroidsContainer />}
         />
         <Route
-          path='/about/:asterodId?'
+          path='/about/:asteroidId'
           render={() => <AboutAsteroidContainer />}
         />
       </div>
-      <footer>2021 © Все права и планета защищены.</footer>
+      <footer className={style.footer}>2021 © Все права и планета защищены.</footer>
     </div>
   );
 }

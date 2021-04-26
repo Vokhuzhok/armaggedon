@@ -1,4 +1,5 @@
 const SET_DESTRUCTION_ASTEROID ="SET_DESTRUCTION_ASTEROID";
+const SET_ALL_TO_ORDER="SET_ALL_TO_ORDER";
 
 let initialState = {
     destructions: [],
@@ -9,7 +10,12 @@ let initialState = {
         case SET_DESTRUCTION_ASTEROID:
             return {
                 ...state,
-                destructions: action.asteroid
+                destructions: [...state.destructions, action.asteroid]
+            }
+        case SET_ALL_TO_ORDER:
+            return {
+                ...state,
+                destructions: action.order
             }
         default:
             return state
@@ -17,5 +23,6 @@ let initialState = {
   }
 
   export const setDestructionAsteroid = (asteroid) => ({ type: SET_DESTRUCTION_ASTEROID, asteroid });
+  export const setAllToOrder = (order) => ({type: SET_ALL_TO_ORDER, order})
 
   export default destructionsReducer;

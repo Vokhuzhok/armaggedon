@@ -1,0 +1,21 @@
+.main {
+    position: relative;
+    top: 15em;
+}
+
+.table {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(207, 207, 207);
+    border: solid black;
+}
+
+.main button {
+    background-color: #186DD6;
+    height: 3em;
+    width: 12em;
+    color: white;
+    border-radius: 2em;
+    border: solid #186DD6 1px;
+    cursor: pointer;
+}
