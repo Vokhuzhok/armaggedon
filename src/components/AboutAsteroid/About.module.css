@@ -1,3 +1,4 @@
+@media screen and (min-width:600px){
 .main {
     position: relative;
     top: 15em;
@@ -18,4 +19,31 @@
     border-radius: 2em;
     border: solid #186DD6 1px;
     cursor: pointer;
+}
+}
+
+@media screen and (max-width:599px){
+
+    .main {
+        position: relative;
+        top: 12em;
+        bottom: 3em;
+    }
+    
+    .table {
+        width: 100%;
+        text-align: center;
+        background-color: rgb(207, 207, 207);
+        border: solid black;
+    }
+    
+    .main button {
+        background-color: #186DD6;
+        height: 3em;
+        width: 12em;
+        color: white;
+        border-radius: 2em;
+        border: solid #186DD6 1px;
+        cursor: pointer;
+    }
 }

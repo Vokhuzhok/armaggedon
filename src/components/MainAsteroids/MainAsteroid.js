@@ -29,7 +29,7 @@ const MainAsteroid = (props) => {
               </div>
               <div className={style.asteroid}>
               <img src={asteroid} alt='asteroid'   
-              width={a.estimated_diameter.meters.estimated_diameter_max < 100?40:a.estimated_diameter.meters.estimated_diameter_max<300?100:300}
+              width={a.estimated_diameter.meters.estimated_diameter_max <50?40:a.estimated_diameter.meters.estimated_diameter_max<300?100:200}
                 />
               </div>
             </div>

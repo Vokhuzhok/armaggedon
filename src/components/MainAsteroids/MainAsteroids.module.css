@@ -1,3 +1,4 @@
+@media screen and (min-width:600px){
 .head {
     display:flex;
     width: 100%;
@@ -83,7 +84,6 @@
 .images {
     width: 17em;
     display: flex;
-    overflow: \;
 }
 
 .dotes {
@@ -125,4 +125,119 @@
     border-radius: 2em;
     border: solid #186DD6 1px;
     cursor: pointer;
+}
+}
+
+@media screen and (max-width:599px) {
+    .main {
+        margin-top: 15em;
+        position: relative;
+    }
+
+    .head {
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+        font-size: 16px;
+        position: fixed;
+        top:11.9em;
+        background-color: white;
+        padding-bottom: 5px;
+        z-index: 10;
+    }
+
+    .button button {
+        border: none;
+        outline: none;
+        background-color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .use {
+        font-weight: bold;
+    }
+    
+    .notUse {
+        text-decoration: underline;
+    }
+
+    .name  {
+        margin-left: 1%;
+        font-size: 25px;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .mainNoHazard {
+        display: flex;
+        flex-direction: column;
+        background: rgb(207,243,125);
+        background: linear-gradient(90deg, rgba(207,243,125,1) 0%, rgba(125,232,140,1) 100%);
+        border:black solid 1px;
+        margin: 1%;
+        border-radius: 0.5em;
+        height: 28em;
+        overflow: hidden;
+    }
+    
+    .mainHazard {
+        display: flex;
+        flex-direction: column;
+        background: rgb(255,177,153);
+        background: linear-gradient(90deg, rgba(255,177,153,1) 0%, rgba(255,8,68,1) 100%);
+        border:black solid 1px;
+        margin: 1%;
+        border-radius: 0.5em;
+        height: 28em;
+        overflow: hidden;
+    }
+
+    .dino img{
+        position:relative; 
+        top: 13em;
+        left:87%;
+        transform: scale(-0.7,0.7);
+    }
+
+    .asteroid img{
+        position:relative;
+        height: 30%;
+        top: -3.5em;
+        transform: scale(0.5, 0.5);
+    }
+    
+    .dotes {
+        border-bottom: black dashed 1px;
+        width: 11em;
+    }
+
+    .images {
+        width: 100%;
+        height: 46%;
+    }
+
+    .buttonHazard {
+        background-color: #186DD6;
+        height: 3em;
+        width: 12em;
+        color: white;
+        border-radius: 2em;
+        border: solid #186DD6 1px;
+        cursor: pointer;
+    }
+
+    .hazardText {
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .hazard {
+        text-align: center;
+    }
+
+    .hazardBlock {
+        margin: auto;
+    }
 }
